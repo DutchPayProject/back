@@ -12,6 +12,7 @@ public class DetailsService {
     @Autowired
     DetailsMapper detailsMapper;
 
+    /* group_id를 통해 세부내역을 불러옴 */
     public List<DetailsDTO> getList(int group_id) {
         System.out.println(group_id);
         return detailsMapper.getDetails(group_id);
