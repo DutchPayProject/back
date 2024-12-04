@@ -12,5 +12,5 @@ import java.util.List;
 public interface GroupMapper {
 
     List<GroupDto> getGroups();
-
+    void insertGroup(GroupDto group);
 }
