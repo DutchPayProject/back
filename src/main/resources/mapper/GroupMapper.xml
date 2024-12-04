@@ -8,6 +8,9 @@
         SELECT * FROM dutchgroups
     </select>
 
+    <insert id="insertGroup">
+        INSERT INTO dutchgroups (group_name, device_id) VALUES (#{group_name}, #{device_id})
+    </insert>
 
 
 </mapper>
