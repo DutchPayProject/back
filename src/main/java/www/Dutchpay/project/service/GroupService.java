@@ -17,7 +17,9 @@ public class GroupService {
         return groupMapper.getGroups();
     }
 
-
-
+    public String insertGroup(GroupDto groupDto){
+        groupMapper.insertGroup(groupDto);
+        return  "그룹이 등록되었습니다!";
+    }
 
 }
