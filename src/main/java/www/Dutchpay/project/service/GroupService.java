@@ -22,4 +22,9 @@ public class GroupService {
         return  "그룹이 등록되었습니다!";
     }
 
+    public String updateGroup(GroupDto groupDto){
+        groupMapper.updateGroup(groupDto);
+        return "그룹 정보가 수정되었습니다!";
+    }
+
 }
