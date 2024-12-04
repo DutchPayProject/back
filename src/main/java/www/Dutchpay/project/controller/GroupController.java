@@ -19,7 +19,11 @@ public class GroupController {
         return groupService.getGroup();
     }
 
+    @PostMapping("/insertGroup")
+    public String Insert(@RequestBody GroupDto groupDto){
+        return groupService.insertGroup(groupDto);
 
+    }
 
 
 }
