@@ -12,5 +12,9 @@
         INSERT INTO dutchgroups (group_name, device_id) VALUES (#{group_name}, #{device_id})
     </insert>
 
+    <update id="updateGroup">
+        UPDATE dutchgroups SET group_name = #{group_name} WHERE device_id = #{device_id}
+    </update>
+
 
 </mapper>
