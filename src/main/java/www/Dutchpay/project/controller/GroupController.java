@@ -25,5 +25,11 @@ public class GroupController {
 
     }
 
+    @PutMapping("/updateGroup")
+    public String Update(@RequestBody GroupDto groupDto){
+        return groupService.updateGroup(groupDto);
+    }
+
+
 
 }
