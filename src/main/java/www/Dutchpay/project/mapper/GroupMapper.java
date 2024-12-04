@@ -13,4 +13,5 @@ public interface GroupMapper {
 
     List<GroupDto> getGroups();
     void insertGroup(GroupDto group);
+    void updateGroup(GroupDto group);
 }
