@@ -18,6 +18,7 @@ public class DetailsService {
         return detailsMapper.getDetails(group_id);
     }
 
+    /* Insert 로직 수정 필요 return "성공 x" */
     public String insertList(DetailsDTO detailsDTO){
         detailsMapper.insertDetails(detailsDTO.getDevice_id(),detailsDTO.getGroup_id(),detailsDTO.getTitle(),detailsDTO.getMoney());
         return "성공";
