@@ -29,9 +29,12 @@ public class GroupService {
     }
 
     //update로 그룹 정보 수정하는 서비스 로직
-    public String updateGroup(GroupDto groupDto){
-        groupMapper.updateGroup(groupDto);
-        return "그룹 정보가 수정되었습니다!";
+    public boolean updateGroup(GroupDto groupDto){
+        int cnt = groupMapper.updateGroup(groupDto.getGroup_id(),groupDto.getDevice_id(),groupDto.getGroup_name());
+        if(cnt == 0){
+            return false;
+        }
+            return true;
     }
 
     //delete로 그룹 정보 삭제하는 서비스 로직
