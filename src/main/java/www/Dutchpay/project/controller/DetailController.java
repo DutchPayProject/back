@@ -18,4 +18,9 @@ public class DetailController {
     public ResponseEntity<List<DetailsDTO>> getList(@RequestBody DetailsDTO detailsDTO){
         return ResponseEntity.ok(detailsService.getList(detailsDTO.getGroup_id()));
     }
+
+    @PostMapping("/insert")
+    public ResponseEntity<String> insertList(@RequestBody DetailsDTO detailsDTO){
+        return ResponseEntity.ok(detailsService.insertList(detailsDTO));
+    }
 }
