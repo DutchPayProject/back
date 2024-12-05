@@ -16,5 +16,9 @@
         UPDATE dutchgroups SET group_name = #{group_name} WHERE device_id = #{device_id}
     </update>
 
+    <delete id="deleteGroup">
+        delete FROM dutchgroups WHERE group_name = #{group_name}
+    </delete>
+
 
 </mapper>
