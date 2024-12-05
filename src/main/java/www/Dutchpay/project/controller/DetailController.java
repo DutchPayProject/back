@@ -29,4 +29,9 @@ public class DetailController {
         System.out.println(detailsDTO);
         return ResponseEntity.ok(detailsService.deleteList(detailsDTO));
     }
+
+    @PatchMapping("/update")
+    public ResponseEntity<Boolean> updateList(@RequestBody DetailsDTO detailsDTO){
+        return ResponseEntity.ok(detailsService.updateList(detailsDTO));
+    }
 }
