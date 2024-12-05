@@ -14,4 +14,5 @@ public interface DetailsMapper {
 
    void deleteDetails(int device_id, int group_id, String title);
 
+   void updateDetails(int list_id,String title, int money);
 }
