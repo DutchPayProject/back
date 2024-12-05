@@ -19,12 +19,12 @@ public class GroupService {
     }
 
     //insert로 그룹 추가하는 서비스 로직
-    public String insertGroup(GroupDto groupDto){
+    public boolean insertGroup(GroupDto groupDto){
         try {
             groupMapper.insertGroup(groupDto);
-            return "그룹 정보 저장 되었습니다.";
+            return true;
         }catch (Exception e){
-            return "그룹 정보가 저장되지 않았습니다.";
+            return false;
         }
     }
 
