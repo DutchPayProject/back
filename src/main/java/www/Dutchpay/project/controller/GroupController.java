@@ -37,21 +37,29 @@ public class GroupController {
     @PostMapping("/insertGroup")
     public ResponseEntity<GroupResponse> Insert(@RequestBody GroupDto groupDto){
         boolean success = groupService.insertGroup(groupDto);
-        gres.setData(null);
         if(success){
             gres.setSuccess(true);
-            gres.setMessage("정보 저장 됐습니다.");
+            gres.setMessage("정보를 저장 됐습니다.");
         }else {
             gres.setSuccess(false);
-            gres.setMessage("정보 저장 실패했습니다.");
+            gres.setMessage("정보 저장에 실패했습니다.");
         }
         return ResponseEntity.ok(gres);
     }
 
     //update로 그룹 수정 할 때
-    @PutMapping("/updateGroup")
-    public String Update(@RequestBody GroupDto groupDto){
-        return groupService.updateGroup(groupDto);
+    @PatchMapping("/updateGroup")
+    public ResponseEntity<GroupResponse> Update(@RequestBody GroupDto groupDto){
+        boolean success = groupService.updateGroup(groupDto);
+            gres.setData(null);
+        if(success){
+            gres.setSuccess(true);
+            gres.setMessage("그룹 정보를 수정하였습니다.");
+        }else{
+            gres.setSuccess(false);
+            gres.setMessage("그룹 정보 수정에 실패했습니다. ");
+        }
+        return ResponseEntity.ok(gres);
     }
 
     //delete로 그룹 제거 할 때
