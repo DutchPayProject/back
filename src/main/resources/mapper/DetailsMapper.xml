@@ -7,4 +7,9 @@
             SELECT * FROM details WHERE group_id = #{group_id}
         </select>
 
+        <insert id="insertDetails" parameterType="DetailsDTO">
+            INSERT  INTO details (device_id,group_id,title,money) values (#{device_id},#{group_id},#{title},#{money})
+
+        </insert>
+
 </mapper>
