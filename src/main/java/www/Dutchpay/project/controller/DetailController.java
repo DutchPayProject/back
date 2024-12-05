@@ -26,7 +26,6 @@ public class DetailController {
 
     @DeleteMapping("/delete")
     public ResponseEntity<Boolean> deleteList(@RequestBody DetailsDTO detailsDTO){
-        System.out.println(detailsDTO);
         return ResponseEntity.ok(detailsService.deleteList(detailsDTO));
     }
 
