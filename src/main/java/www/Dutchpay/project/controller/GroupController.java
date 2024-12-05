@@ -35,8 +35,17 @@ public class GroupController {
 
     //insert로 그룹 추가 할 때
     @PostMapping("/insertGroup")
-    public String Insert(@RequestBody GroupDto groupDto){
-        return groupService.insertGroup(groupDto);
+    public ResponseEntity<GroupResponse> Insert(@RequestBody GroupDto groupDto){
+        boolean success = groupService.insertGroup(groupDto);
+        gres.setData(null);
+        if(success){
+            gres.setSuccess(true);
+            gres.setMessage("정보 저장 됐습니다.");
+        }else {
+            gres.setSuccess(false);
+            gres.setMessage("정보 저장 실패했습니다.");
+        }
+        return ResponseEntity.ok(gres);
     }
 
     //update로 그룹 수정 할 때
