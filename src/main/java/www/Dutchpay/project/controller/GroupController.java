@@ -30,6 +30,9 @@ public class GroupController {
         return groupService.updateGroup(groupDto);
     }
 
-
+    @DeleteMapping("/deleteGroup")
+    public String Delete(@RequestBody GroupDto groupDto){
+        return groupService.deleteGroup(groupDto);
+    }
 
 }
