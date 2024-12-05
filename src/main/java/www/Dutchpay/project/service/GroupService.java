@@ -38,9 +38,12 @@ public class GroupService {
     }
 
     //delete로 그룹 정보 삭제하는 서비스 로직
-    public String deleteGroup(GroupDto groupDto){
-        groupMapper.deleteGroup(groupDto);
-        return "그룹이 삭제 되었습니다.";
+    public boolean deleteGroup(GroupDto groupDto){
+        int cnt = groupMapper.deleteGroup(groupDto.getGroup_id(),groupDto.getGroup_name(),groupDto.getDevice_id());
+        if(cnt == 0){
+            return false;
+        }
+        return true;
     }
 
 }
