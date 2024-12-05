@@ -13,20 +13,28 @@ public class GroupService {
     @Autowired
     GroupMapper groupMapper;
 
+    //get으로 그룹 가져오는 서비스 로직
     public List<GroupDto> getGroup (){
         return groupMapper.getGroups();
     }
 
+    //insert로 그룹 추가하는 서비스 로직
     public String insertGroup(GroupDto groupDto){
-        groupMapper.insertGroup(groupDto);
-        return  "그룹이 등록되었습니다!";
+        try {
+            groupMapper.insertGroup(groupDto);
+            return "그룹 정보 저장 되었습니다.";
+        }catch (Exception e){
+            return "그룹 정보가 저장되지 않았습니다.";
+        }
     }
 
+    //update로 그룹 정보 수정하는 서비스 로직
     public String updateGroup(GroupDto groupDto){
         groupMapper.updateGroup(groupDto);
         return "그룹 정보가 수정되었습니다!";
     }
 
+    //delete로 그룹 정보 삭제하는 서비스 로직
     public String deleteGroup(GroupDto groupDto){
         groupMapper.deleteGroup(groupDto);
         return "그룹이 삭제 되었습니다.";
