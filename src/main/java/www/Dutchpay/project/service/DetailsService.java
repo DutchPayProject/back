@@ -17,4 +17,9 @@ public class DetailsService {
         System.out.println(group_id);
         return detailsMapper.getDetails(group_id);
     }
+
+    public String insertList(DetailsDTO detailsDTO){
+        detailsMapper.insertDetails(detailsDTO.getDevice_id(),detailsDTO.getGroup_id(),detailsDTO.getTitle(),detailsDTO.getMoney());
+        return "성공";
+    }
 }
