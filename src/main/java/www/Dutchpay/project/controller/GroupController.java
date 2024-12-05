@@ -57,15 +57,24 @@ public class GroupController {
             gres.setMessage("그룹 정보를 수정하였습니다.");
         }else{
             gres.setSuccess(false);
-            gres.setMessage("그룹 정보 수정에 실패했습니다. ");
+            gres.setMessage("그룹 정보 수정에 실패했습니다.");
         }
         return ResponseEntity.ok(gres);
     }
 
     //delete로 그룹 제거 할 때
     @DeleteMapping("/deleteGroup")
-    public String Delete(@RequestBody GroupDto groupDto){
-        return groupService.deleteGroup(groupDto);
+    public ResponseEntity<GroupResponse> Delete(@RequestBody GroupDto groupDto){
+        boolean deletesucess = groupService.deleteGroup(groupDto);
+            gres.setData(null);
+        if(deletesucess){
+            gres.setSuccess(true);
+            gres.setMessage("그룹이 삭제되었습니다!.");
+        }else {
+            gres.setSuccess(false);
+            gres.setMessage("그룹 삭제에 실패했습니다.");
+        }
+        return ResponseEntity.ok(gres);
     }
 
 }
