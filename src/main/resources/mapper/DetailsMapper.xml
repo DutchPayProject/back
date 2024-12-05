@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="www.Dutchpay.project.mapper.DetailsMapper">
+        <select id="getDetails" resultType="www.Dutchpay.project.dto.DetailsDTO">
+            SELECT * FROM details WHERE group_id = #{group_id}
+        </select>
+
+        <insert id="insertDetails" parameterType="DetailsDTO">
+            INSERT  INTO details (device_id,group_id,title,money) values (#{device_id},#{group_id},#{title},#{money})
+
+        </insert>
+
+</mapper>
