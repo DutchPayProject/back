@@ -18,10 +18,15 @@ public class DetailsService {
         return detailsMapper.getDetails(group_id);
     }
 
-    /* Insert 로직 수정 필요 return "성공 x" */
+    /* Insert 로직  group_id,title,money를 받음 */
     public String insertList(DetailsDTO detailsDTO){
-        detailsMapper.insertDetails(detailsDTO.getDevice_id(),detailsDTO.getGroup_id(),detailsDTO.getTitle(),detailsDTO.getMoney());
-        return "성공";
+       try {
+           detailsMapper.insertDetails(detailsDTO.getDevice_id(),detailsDTO.getGroup_id(),detailsDTO.getTitle(),detailsDTO.getMoney());
+            return "삽입 성공";
+       }catch (Exception e){
+           return "에러 :" +e;
+       }
+
     }
 
     /* Delete 로직 반환되는 cnt이 0이면 없어진게없으니 false 있으면 true */
