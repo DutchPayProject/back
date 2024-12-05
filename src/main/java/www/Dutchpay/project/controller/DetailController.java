@@ -23,4 +23,14 @@ public class DetailController {
     public ResponseEntity<String> insertList(@RequestBody DetailsDTO detailsDTO){
         return ResponseEntity.ok(detailsService.insertList(detailsDTO));
     }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<Boolean> deleteList(@RequestBody DetailsDTO detailsDTO){
+        return ResponseEntity.ok(detailsService.deleteList(detailsDTO));
+    }
+
+    @PatchMapping("/update")
+    public ResponseEntity<Boolean> updateList(@RequestBody DetailsDTO detailsDTO){
+        return ResponseEntity.ok(detailsService.updateList(detailsDTO));
+    }
 }

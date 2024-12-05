@@ -12,4 +12,14 @@
 
         </insert>
 
+        <delete id="deleteDetails">
+                DELETE  FROM details
+                where device_id =#{device_id} and group_id=#{group_id} and title = #{title}
+        </delete>
+
+    <update id="updateDetails" parameterType="DetailsDTO">
+        UPDATE details
+        SET title = #{title}, money = #{money}
+        WHERE list_id = #{list_id}
+    </update>
 </mapper>

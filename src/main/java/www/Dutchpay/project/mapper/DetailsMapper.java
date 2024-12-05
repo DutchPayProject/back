@@ -12,4 +12,7 @@ public interface DetailsMapper {
 
    void insertDetails(int device_id, int group_id, String title , int money);
 
+   int deleteDetails(int device_id, int group_id, String title);
+
+   int updateDetails(int list_id,String title, int money);
 }
