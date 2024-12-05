@@ -34,4 +34,13 @@ public class DetailsService {
             return false;
         }
     }
+
+    public boolean updateList(DetailsDTO detailsDTO){
+       try{
+           detailsMapper.updateDetails(detailsDTO.getList_id(),detailsDTO.getTitle(),detailsDTO.getMoney());
+           return true;
+       }catch ( Exception e){
+           return false;
+       }
+    }
 }
