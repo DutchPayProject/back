@@ -23,4 +23,15 @@ public class DetailsService {
         detailsMapper.insertDetails(detailsDTO.getDevice_id(),detailsDTO.getGroup_id(),detailsDTO.getTitle(),detailsDTO.getMoney());
         return "성공";
     }
+
+    /* Delete 로직인데 try catch문 예외에 걸리지않고 다  true 반환*/
+
+    public boolean deleteList(DetailsDTO detailsDTO){
+        try {
+            detailsMapper.deleteDetails(detailsDTO.getDevice_id(),detailsDTO.getGroup_id(),detailsDTO.getTitle());
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
