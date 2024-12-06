@@ -17,7 +17,12 @@ public class MemberController {
   /*해당 그룹에 관한 맴버만 가져오기 */
     @PostMapping("/groupget")
     public ResponseEntity<List<MemberDTO>>GroupMember(@RequestBody MemberDTO memberDTO) {
-        System.out.println(memberDTO);
       return ResponseEntity.ok(memberService.GroupMember(memberDTO));
+    }
+
+    /*해당 장소에 관한 맴버만 가져오기 */
+    @PostMapping("/listget")
+    public ResponseEntity<List<MemberDTO>>ListMember(@RequestBody MemberDTO memberDTO){
+        return ResponseEntity.ok(memberService.ListMember(memberDTO));
     }
 }
