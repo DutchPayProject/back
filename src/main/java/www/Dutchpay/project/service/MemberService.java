@@ -17,4 +17,9 @@ public class MemberService {
 
         return memberMapper.GroupMember(memberDTO.getGroup_id());
     }
+
+    public List<MemberDTO> ListMember (MemberDTO memberDTO) {
+
+        return memberMapper.ListMember(memberDTO.getList_id());
+    }
 }
