@@ -10,4 +10,6 @@ public class MemberDTO {
     private int list_id;
     private int member_id;
     private String member;
+
+    private int money_list;
 }
