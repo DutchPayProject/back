@@ -8,4 +8,8 @@
             SELECT * FROM member where group_id = #{group_id}
     </select>
 
+    <select id="ListMember" parameterType="www.Dutchpay.project.dto.MemberDTO">
+        SELECT * FROM member where list_id = #{list_id}
+    </select>
+
 </mapper>
