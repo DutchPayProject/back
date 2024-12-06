@@ -10,4 +10,6 @@ public interface MemberMapper {
 
     List<MemberDTO> GroupMember(int group_id);
     List<MemberDTO> ListMember(int list_id);
+
+    void InsertMember(MemberDTO memberDTO);
 }
