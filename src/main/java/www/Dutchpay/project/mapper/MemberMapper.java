@@ -9,4 +9,5 @@ import java.util.List;
 public interface MemberMapper {
 
     List<MemberDTO> GroupMember(int group_id);
+    List<MemberDTO> ListMember(int list_id);
 }
