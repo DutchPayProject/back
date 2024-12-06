@@ -7,7 +7,7 @@ public class MemberDTO {
 
     private int device_id;
     private int group_id;
-    private int list_id;
+    private Integer list_id = null;
     private int member_id;
     private String member;
 
