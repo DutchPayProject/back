@@ -22,4 +22,13 @@ public class MemberService {
 
         return memberMapper.ListMember(memberDTO.getList_id());
     }
+
+    public String InsertMember(MemberDTO memberDTO){
+       try{
+           memberMapper.InsertMember(memberDTO);
+           return "true";
+       }catch (Exception e){
+            return "에러 :" +e.getMessage();
+       }
+    }
 }
