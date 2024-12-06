@@ -25,4 +25,9 @@ public class MemberController {
     public ResponseEntity<List<MemberDTO>>ListMember(@RequestBody MemberDTO memberDTO){
         return ResponseEntity.ok(memberService.ListMember(memberDTO));
     }
+
+    @PostMapping("/insert")
+    public ResponseEntity<String> InsertMember(@RequestBody MemberDTO memberDTO){
+        return ResponseEntity.ok(memberService.InsertMember(memberDTO));
+    }
 }
