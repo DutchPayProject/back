@@ -12,4 +12,6 @@ public interface MemberMapper {
     List<MemberDTO> ListMember(int list_id);
 
     void InsertMember(MemberDTO memberDTO);
+
+    void DeleteMember(int member_id);
 }
