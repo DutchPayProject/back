@@ -31,4 +31,13 @@ public class MemberService {
             return "에러 :" +e.getMessage();
        }
     }
+
+    public String DeleteMember(int member_id){
+        try{
+                memberMapper.DeleteMember(member_id);
+                return "삭제 성공";
+        }catch (Exception e){
+            return e.getMessage();
+        }
+    }
 }
