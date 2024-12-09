@@ -1,5 +1,6 @@
 package www.Dutchpay.project.controller;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,5 +30,10 @@ public class MemberController {
     @PostMapping("/insert")
     public ResponseEntity<String> InsertMember(@RequestBody MemberDTO memberDTO){
         return ResponseEntity.ok(memberService.InsertMember(memberDTO));
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> DeleteMember(@RequestBody MemberDTO memberDTO){
+        return ResponseEntity.ok(memberService.DeleteMember(memberDTO.getMember_id()));
     }
 }
