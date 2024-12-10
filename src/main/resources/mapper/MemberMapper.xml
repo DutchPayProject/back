@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="www.Dutchpay.project.mapper.MemberMapper">
 
-    <select id="GroupMember" resultType="www.Dutchpay.project.dto.MemberDTO">
+    <select id="GroupMember" >
             SELECT * FROM member where group_id = #{group_id}
     </select>
 
-    <select id="ListMember" resultType="www.Dutchpay.project.dto.MemberDTO">
+    <select id="ListMember" >
         SELECT * FROM member where list_id = #{list_id}
     </select>
 
