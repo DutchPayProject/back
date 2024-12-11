@@ -1,8 +1,12 @@
 package www.Dutchpay.project.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class DetailsDTO {
 
     private int device_id;
