@@ -2,7 +2,7 @@ package www.Dutchpay.project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import www.Dutchpay.project.dto.GroupDto;
+import www.Dutchpay.project.dto.GroupDTO;
 import www.Dutchpay.project.service.GroupService;
 
 import java.util.List;
@@ -15,23 +15,23 @@ public class GroupController {
     GroupService groupService;
 
     @GetMapping("/getGroup")
-    public List<GroupDto> Collect() {
+    public List<GroupDTO> Collect() {
         return groupService.getGroup();
     }
 
     @PostMapping("/insertGroup")
-    public String Insert(@RequestBody GroupDto groupDto){
+    public String Insert(@RequestBody GroupDTO groupDto){
         return groupService.insertGroup(groupDto);
 
     }
 
     @PutMapping("/updateGroup")
-    public String Update(@RequestBody GroupDto groupDto){
+    public String Update(@RequestBody GroupDTO groupDto){
         return groupService.updateGroup(groupDto);
     }
 
     @DeleteMapping("/deleteGroup")
-    public String Delete(@RequestBody GroupDto groupDto){
+    public String Delete(@RequestBody GroupDTO groupDto){
         return groupService.deleteGroup(groupDto);
     }
 

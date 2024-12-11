@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GroupDto {
+public class GroupDTO {
 
     private int group_id;
     private String group_name;
