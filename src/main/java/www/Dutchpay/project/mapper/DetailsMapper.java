@@ -1,8 +1,9 @@
 package www.Dutchpay.project.mapper;
 
+import www.Dutchpay.project.dto.DetailsDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-import www.Dutchpay.project.dto.DetailsDTO;
+
 
 import java.util.List;
 
