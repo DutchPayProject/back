@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
 @Data
-@Log4j
 @NoArgsConstructor
 @AllArgsConstructor
 public class DetailsDTO {
