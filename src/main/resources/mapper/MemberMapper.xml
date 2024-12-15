@@ -8,6 +8,10 @@
             SELECT * FROM member where group_id = #{group_id}
     </select>
 
+    <select id="allgroup" >
+        SELECT * FROM member
+    </select>
+
     <select id="ListMember" >
         SELECT * FROM member where list_id = #{list_id}
     </select>

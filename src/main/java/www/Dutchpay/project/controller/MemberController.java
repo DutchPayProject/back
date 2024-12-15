@@ -15,6 +15,11 @@ public class MemberController {
 
     @Autowired
     MemberService memberService;
+
+    @GetMapping("all")
+    public ResponseEntity<List<MemberDTO>> GroupAll(){
+       return ResponseEntity.ok(memberService.allgroup());
+    }
   /*해당 그룹에 관한 맴버만 가져오기 */
     @PostMapping("/groupget")
     public ResponseEntity<List<MemberDTO>>GroupMember(@RequestBody MemberDTO memberDTO) {

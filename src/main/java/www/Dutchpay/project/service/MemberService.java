@@ -40,4 +40,9 @@ public class MemberService {
             return e.getMessage();
         }
     }
+
+    public List<MemberDTO> allgroup (){
+      return memberMapper.allgroup();
+
+    }
 }

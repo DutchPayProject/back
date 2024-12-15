@@ -18,4 +18,6 @@ public interface MemberMapper {
     void InsertMember(MemberDTO memberDTO);
 
     void DeleteMember(int member_id);
+
+    List<MemberDTO> allgroup();
 }
