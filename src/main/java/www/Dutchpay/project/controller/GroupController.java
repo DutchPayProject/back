@@ -3,7 +3,7 @@ package www.Dutchpay.project.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import www.Dutchpay.project.dto.GroupDto;
+import www.Dutchpay.project.dto.GroupDTO;
 import www.Dutchpay.project.service.GroupService;
 import www.Dutchpay.project.utils.response.GroupResponse;
 
@@ -31,6 +31,7 @@ public class GroupController {
             gres.setData(temp);
         }
         return ResponseEntity.ok(gres);
+
     }
 
     //insert로 그룹 추가 할 때
@@ -60,10 +61,11 @@ public class GroupController {
             gres.setMessage("그룹 정보 수정에 실패했습니다.");
         }
         return ResponseEntity.ok(gres);
-    }
+
 
     //delete로 그룹 제거 할 때
     @DeleteMapping("/deleteGroup")
+
     public ResponseEntity<GroupResponse> Delete(@RequestBody GroupDto groupDto){
         boolean deletesucess = groupService.deleteGroup(groupDto);
             gres.setData(null);
@@ -75,6 +77,7 @@ public class GroupController {
             gres.setMessage("그룹 삭제에 실패했습니다.");
         }
         return ResponseEntity.ok(gres);
+
     }
 
 }
