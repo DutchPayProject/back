@@ -12,8 +12,11 @@ import java.util.List;
 @Repository
 public interface GroupMapper {
 
-    List<GroupDTO> getGroups();
-    void insertGroup(GroupDTO group);
-    void updateGroup(GroupDTO group);
-    void deleteGroup(GroupDTO group);
+
+    List<GroupDto> getGroups();
+    void insertGroup(GroupDto group);
+    int deleteGroup(int group_id, String group_name,int device_id);
+    int updateGroup(int group_id, int device_id, String group_name);
+
+
 }

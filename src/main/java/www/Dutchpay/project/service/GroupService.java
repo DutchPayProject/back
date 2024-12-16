@@ -13,23 +13,38 @@ public class GroupService {
     @Autowired
     GroupMapper groupMapper;
 
-    public List<GroupDTO> getGroup (){
+    //get으로 그룹 가져오는 서비스 로직
+    public List<GroupDto> getGroup (){
         return groupMapper.getGroups();
     }
 
-    public String insertGroup(GroupDTO groupDto){
-        groupMapper.insertGroup(groupDto);
-        return  "그룹이 등록되었습니다!";
+    //insert로 그룹 추가하는 서비스 로직
+    public boolean insertGroup(GroupDto groupDto){
+        try {
+            groupMapper.insertGroup(groupDto);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 
-    public String updateGroup(GroupDTO groupDto){
-        groupMapper.updateGroup(groupDto);
-        return "그룹 정보가 수정되었습니다!";
+    //update로 그룹 정보 수정하는 서비스 로직
+    public boolean updateGroup(GroupDto groupDto){
+        int cnt = groupMapper.updateGroup(groupDto.getGroup_id(),groupDto.getDevice_id(),groupDto.getGroup_name());
+        if(cnt == 0){
+            return false;
+        }
+            return true;
     }
 
-    public String deleteGroup(GroupDTO groupDto){
-        groupMapper.deleteGroup(groupDto);
-        return "그룹이 삭제 되었습니다.";
+    //delete로 그룹 정보 삭제하는 서비스 로직
+    public boolean deleteGroup(GroupDto groupDto){
+        int cnt = groupMapper.deleteGroup(groupDto.getGroup_id(),groupDto.getGroup_name(),groupDto.getDevice_id());
+        if(cnt == 0){
+            return false;
+        }
+        return true;
+=
     }
 
 }
